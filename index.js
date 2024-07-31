@@ -105,7 +105,15 @@ app.post("/api/persons", (request, response) => {
   response.json(newNum);
 });
 
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// const PORT = 3001;
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+server.listen(3001, "localhost"); // or server.listen(3001, '0.0.0.0'); for all interfaces
+server.on("listening", function () {
+  console.log(
+    "Express server started on port %s at %s",
+    server.address().port,
+    server.address().address
+  );
 });
