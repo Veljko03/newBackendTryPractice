@@ -39,6 +39,10 @@ let phoneNums = [
   },
 ];
 
+app.get("/", (request, response) => {
+  response.send("<h1>Hello World!</h1>");
+});
+
 app.get("/api/info", (request, response) => {
   const num = phoneNums.length;
   const date = new Date();
